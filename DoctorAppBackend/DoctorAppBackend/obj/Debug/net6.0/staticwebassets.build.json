@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "nK2xcF4APtyntldwBM4GeNsCK+s7lZX/YHeUDQCWXQw=",
+  "Source": "DoctorAppBackend",
+  "BasePath": "_content/DoctorAppBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
