@@ -10,6 +10,7 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { DoctorListComponent } from './components/doctor-list/doctor-list.component';
 import { SpecializationListComponent } from './components/specialization-list/specialization-list.component';
 import { SurgeryListComponent } from './components/surgery-list/surgery-list.component';
+import { ViewDoctorsComponent } from './pages/view-doctors/view-doctors.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SurgeryListComponent } from './components/surgery-list/surgery-list.com
     MainContentComponent,
     DoctorListComponent,
     SpecializationListComponent,
-    SurgeryListComponent
+    SurgeryListComponent,
+    ViewDoctorsComponent
   ],
   imports: [
     BrowserModule,

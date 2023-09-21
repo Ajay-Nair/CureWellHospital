@@ -1,0 +1,63 @@
+<app-title-bar></app-title-bar>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar column -->
+    <div class="col-3 pt-3">
+      <div class="d-flex">
+        <app-side-bar></app-side-bar>
+        <!-- this is the menu bar icon -->
+        <div>
+          <i
+            class="menu fa-solid fa-bars fa-2x pt-3 pl-3"
+            (click)="sideMenuToggle()"
+            id="menuIcon"
+            style="color: white"
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-9 pt-3">
+      <div class="container-fluid">
+        <div class="row text-white">
+          <div class="col-4">
+            <div class="card bg-primary">
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
