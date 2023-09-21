@@ -6,7 +6,6 @@ namespace DoctorAppBackend.Services
     {
         List<Doctor> GetAllDoctors();
         bool AddDoctor(Doctor dObj);
-
         List<Specialization> GetAllSpecialization();
         List<Surgery> GetAllSurgeries();
         List<DoctorSpecialization> GetDoctorsBySpecializationCode(string specializationCode);

@@ -12,64 +12,129 @@ namespace DoctorAppBackend.Services
         }
         public bool AddDoctor(Doctor dObj)
         {
-            dbContext.doctors.Add(dObj);
-            return true;
+            try
+            {
+                dbContext.doctors.Add(dObj);
+                var noOfEntries = dbContext.SaveChanges();
+                if (noOfEntries > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
         }
 
         public bool DeleteDoctor(Doctor dObj)
         {
-            var doctor = dbContext.doctors.Remove(dObj);
+            try
+            {
+                var doctor = dbContext.doctors.Remove(dObj);
+                int noOfEntries = dbContext.SaveChanges();
+                if (noOfEntries > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
             
-            return true;
         }
 
         public List<Doctor> GetAllDoctors()
         {
-            var list = dbContext.doctors.ToList();
-            if (list is null)
+            try
+            {
+                return dbContext.doctors.ToList();
+
+            }
+            catch(Exception e)
+            {
                 return null;
-            else
-                return list;
+            }
         }
 
         public List<Specialization> GetAllSpecialization()
         {
-            return dbContext.specializations.ToList();
+            try
+            {
+                return dbContext.specializations.ToList();
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
         }
 
         public List<Surgery> GetAllSurgeries()
         {
-            return dbContext.surgeries.Where(surgery => surgery.SurgeryDate == DateTime.Today).ToList();
-        }
+            try
+            {
+
+                return dbContext.surgeries.Where(surgery => surgery.SurgeryDate == DateTime.Today).ToList();
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }}
 
         public List<DoctorSpecialization> GetDoctorsBySpecializationCode(string specializationCode)
         {
+            try {
+                return dbContext
+                    .DrSpecializations.
+                    Where(drSpecialization => drSpecialization.SpecializationCode.Equals(specializationCode))
+                    .ToList();
 
-            return dbContext
-                .DrSpecializations.
-                Where(drSpecialization => drSpecialization.SpecializationCode.Equals(specializationCode))
-                .ToList();
-
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
         }
 
         public bool UpdateDoctorDetails(Doctor dObj)
         {
-            var doctor = dbContext.doctors.FirstOrDefault(doc => doc.DoctorId == dObj.DoctorId);
-            doctor.DoctorName = dObj.DoctorName;
-            return true;
-        }
-
-        public bool UpdateSurgery(Surgery sObj)
-        {
-            var data = dbContext.surgeries.FirstOrDefault(x => x.SurgeryId == sObj.SurgeryId);
-            if(data!=null)
+            try
             {
-                data.StartTime = sObj.StartTime;
-                data.EndTime = sObj.EndTime;
-                dbContext.SaveChanges();
-                return true;
+                var doctor = dbContext.doctors.FirstOrDefault(doc => doc.DoctorId == dObj.DoctorId);
+                doctor.DoctorName = dObj.DoctorName;
+                int noOfEntries = dbContext.SaveChanges();
+                if (noOfEntries > 0)
+                    return true;
+                else
+                    return false;
+
             }
-            return false;
+            catch(Exception e)
+            {
+                return false;
+            }
+
+        }
+                public bool UpdateSurgery(Surgery sObj)
+        {
+            try
+            {
+                var data = dbContext.surgeries.FirstOrDefault(x => x.SurgeryId == sObj.SurgeryId);
+                if (data != null)
+                {
+                    data.StartTime = sObj.StartTime;
+                    data.EndTime = sObj.EndTime;
+                    dbContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
         }
 
     }
