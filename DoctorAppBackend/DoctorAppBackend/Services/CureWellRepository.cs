@@ -12,37 +12,57 @@ namespace DoctorAppBackend.Services
         }
         public bool AddDoctor(Doctor dObj)
         {
-            throw new NotImplementedException();
+            dbContext.doctors.Add(dObj);
+            return true;
+        }
+
+        public bool DeleteDoctor(Doctor dObj)
+        {
+            var doctor = dbContext.doctors.Remove(dObj);
+            
+            return true;
         }
 
         public List<Doctor> GetAllDoctors()
         {
-            throw new NotImplementedException();
+            var list = dbContext.doctors.ToList();
+            if (list is null)
+                return null;
+            else
+                return list;
         }
 
         public List<Specialization> GetAllSpecialization()
         {
-            throw new NotImplementedException();
+            return dbContext.specializations.ToList();
         }
 
         public List<Surgery> GetAllSurgeries()
         {
-            throw new NotImplementedException();
+            return dbContext.surgeries.Where(surgery => surgery.SurgeryDate == DateTime.Today).ToList();
         }
 
-        public List<Doctor> GetDoctorsBySpecializationCode(string specializationCode)
+        public List<DoctorSpecialization> GetDoctorsBySpecializationCode(string specializationCode)
         {
-            throw new NotImplementedException();
+
+            return dbContext
+                .DrSpecializations.
+                Where(drSpecialization => drSpecialization.SpecializationCode.Equals(specializationCode))
+                .ToList();
+
         }
 
         public bool UpdateDoctorDetails(Doctor dObj)
         {
-            throw new NotImplementedException();
+            var doctor = dbContext.doctors.FirstOrDefault(doc => doc.DoctorId == dObj.DoctorId);
+            doctor.DoctorName = dObj.DoctorName;
+            return true;
         }
 
         public bool UpdateSurgery(Surgery sObj)
         {
             throw new NotImplementedException();
         }
+
     }
 }

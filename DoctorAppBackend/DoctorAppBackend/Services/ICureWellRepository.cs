@@ -9,8 +9,9 @@ namespace DoctorAppBackend.Services
 
         List<Specialization> GetAllSpecialization();
         List<Surgery> GetAllSurgeries();
-        List<Doctor> GetDoctorsBySpecializationCode(string specializationCode );
+        List<DoctorSpecialization> GetDoctorsBySpecializationCode(string specializationCode);
         bool UpdateDoctorDetails(Doctor dObj);
         bool UpdateSurgery(Surgery sObj);
+        bool DeleteDoctor(Doctor dObj);
     }
 }
