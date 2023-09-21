@@ -42,7 +42,15 @@ namespace DoctorAppBackend.Services
 
         public bool UpdateSurgery(Surgery sObj)
         {
-            throw new NotImplementedException();
+            var data = dbContext.surgeries.FirstOrDefault(x => x.SurgeryId == sObj.SurgeryId);
+            if(data!=null)
+            {
+                data.StartTime = sObj.StartTime;
+                data.EndTime = sObj.EndTime;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }
