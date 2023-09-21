@@ -18,6 +18,7 @@ li{
     background-color: #3C414D;
     border-radius: 10px;
     color: white;
+    cursor: pointer;
 }
 
 li:hover{
