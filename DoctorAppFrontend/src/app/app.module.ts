@@ -11,6 +11,8 @@ import { DoctorListComponent } from './components/doctor-list/doctor-list.compon
 import { SpecializationListComponent } from './components/specialization-list/specialization-list.component';
 import { SurgeryListComponent } from './components/surgery-list/surgery-list.component';
 import { FilterMenuComponent } from './components/filter-menu/filter-menu.component';
+import { ViewDoctorsComponent } from './pages/view-doctors/view-doctors.component';
+import { ViewSpecializationsComponent } from './pages/view-specializations/view-specializations.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FilterMenuComponent } from './components/filter-menu/filter-menu.compon
     DoctorListComponent,
     SpecializationListComponent,
     SurgeryListComponent,
-    FilterMenuComponent
+    FilterMenuComponent,
+    ViewDoctorsComponent,
+    ViewSpecializationsComponent
   ],
   imports: [
     BrowserModule,

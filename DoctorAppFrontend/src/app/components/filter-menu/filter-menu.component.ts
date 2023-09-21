@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./filter-menu.component.css']
 })
 export class FilterMenuComponent {
-
+  DoctorCategory = 'All';
+  switchCategory(category: string){
+    this.DoctorCategory = category;
+  }
 }
