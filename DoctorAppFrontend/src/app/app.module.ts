@@ -13,6 +13,7 @@ import { SurgeryListComponent } from './components/surgery-list/surgery-list.com
 import { FilterMenuComponent } from './components/filter-menu/filter-menu.component';
 import { ViewDoctorsComponent } from './pages/view-doctors/view-doctors.component';
 import { ViewSpecializationsComponent } from './pages/view-specializations/view-specializations.component';
+import { ViewScheduleComponent } from './pages/view-schedule/view-schedule.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ViewSpecializationsComponent } from './pages/view-specializations/view-
     SurgeryListComponent,
     FilterMenuComponent,
     ViewDoctorsComponent,
-    ViewSpecializationsComponent
+    ViewSpecializationsComponent,
+    ViewScheduleComponent
   ],
   imports: [
     BrowserModule,
