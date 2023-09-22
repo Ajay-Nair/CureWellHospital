@@ -1,0 +1,17 @@
+<div class="container-fluid center">
+    <div class="dropdown mr-3" style="display: inline-block;">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="background-color: #59AE55; color: white;">
+            Filter doctors
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="dropdown-item"  (click)="switchCategory('All')">All</button>
+            <button class="dropdown-item"  (click)="switchCategory('Specialization 1')">Specialization 1</button>
+            <button class="dropdown-item"  (click)="switchCategory('Specialization 2')">Specialization 2</button>
+            <button class="dropdown-item"  (click)="switchCategory('Specialization 3')">Specialization 3</button>
+        </div>
+    </div>
+    <div class="h2" style="display: inline-block;">
+        <h3 style="color: white;">Viewing <span style="color: #59AE55;">{{ [(DoctorCategory)] }}</span> doctors.</h3>
+    </div>
+</div>

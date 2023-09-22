@@ -10,7 +10,10 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { DoctorListComponent } from './components/doctor-list/doctor-list.component';
 import { SpecializationListComponent } from './components/specialization-list/specialization-list.component';
 import { SurgeryListComponent } from './components/surgery-list/surgery-list.component';
+import { FilterMenuComponent } from './components/filter-menu/filter-menu.component';
 import { ViewDoctorsComponent } from './pages/view-doctors/view-doctors.component';
+import { ViewSpecializationsComponent } from './pages/view-specializations/view-specializations.component';
+import { ViewScheduleComponent } from './pages/view-schedule/view-schedule.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +25,13 @@ import { ViewDoctorsComponent } from './pages/view-doctors/view-doctors.componen
     DoctorListComponent,
     SpecializationListComponent,
     SurgeryListComponent,
-    ViewDoctorsComponent
+    FilterMenuComponent,
+    ViewDoctorsComponent,
+    ViewSpecializationsComponent,
+    ViewScheduleComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
