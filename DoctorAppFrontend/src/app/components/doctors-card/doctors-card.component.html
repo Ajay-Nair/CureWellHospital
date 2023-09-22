@@ -1,11 +1,10 @@
-<div class="container-fluid">
-  <app-filter-menu></app-filter-menu>
+<div class="container">
   <div class="row text-white">
     <ng-container *ngFor="let doctor of doctors">
-      <div class="col-4">
+      <div class="col-3">
         <div class="card m-3">
           <div class="card-header text-center">
-            <img src="{{ doctor.url }}" alt="" />
+            <img src="{{ doctor.url }}" alt="" class="img-fluid"/>
           </div>
           <div class="card-body">
             <h5 class="card-title">{{ doctor.name }}</h5>

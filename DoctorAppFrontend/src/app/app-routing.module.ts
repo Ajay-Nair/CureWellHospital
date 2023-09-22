@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ViewDoctorsComponent } from './pages/view-doctors/view-doctors.component';
 import { ViewSpecializationsComponent } from './pages/view-specializations/view-specializations.component';
 import { ViewScheduleComponent } from './pages/view-schedule/view-schedule.component';
+import { DoctorsCardComponent } from './components/doctors-card/doctors-card.component';
 
 const routes: Routes = [
   {
     path: 'viewDoctors',
-    component: ViewDoctorsComponent,
+    component: DoctorsCardComponent,
   },
   {
     path: 'viewSpecialization',
