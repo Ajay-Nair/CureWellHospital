@@ -1,6 +1,6 @@
 <app-title-bar></app-title-bar>
 <div class="row">
-    <div class="sm-col-3 p-3">
+    <div class="md-col-3 p-3">
         <div class="d-flex p-3">
             <app-side-bar></app-side-bar>
             <!-- this is the menu bar icon -->
@@ -10,13 +10,19 @@
             </div>
         </div>
     </div>
-    <div class="sm-col-9 p-3">
+    <div class="md-col-9 p-3">
         <div class="row">
             <div class="container-fluid">
                 <div class="md-col-10">
 
-    <div class="col-9">
-      <app-doctors-card></app-doctors-card>
+                </div>
+                <div class="md-col-1 mt-2">
+                    <app-filter-menu></app-filter-menu>
+                </div>
+            </div>
+        </div>
+        <div class="row p-3">
+            <router-outlet></router-outlet>
+        </div>
     </div>
-  </div>
 </div>
