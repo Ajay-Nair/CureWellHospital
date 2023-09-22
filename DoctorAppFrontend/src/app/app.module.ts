@@ -14,6 +14,7 @@ import { FilterMenuComponent } from './components/filter-menu/filter-menu.compon
 import { ViewDoctorsComponent } from './pages/view-doctors/view-doctors.component';
 import { ViewSpecializationsComponent } from './pages/view-specializations/view-specializations.component';
 import { ViewScheduleComponent } from './pages/view-schedule/view-schedule.component';
+import { DoctorsCardComponent } from './components/doctors-card/doctors-card.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ViewScheduleComponent } from './pages/view-schedule/view-schedule.compo
     ViewDoctorsComponent,
     ViewSpecializationsComponent,
     ViewScheduleComponent,
+    DoctorsCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
