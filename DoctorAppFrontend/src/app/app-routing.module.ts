@@ -11,6 +11,10 @@ const routes: Routes = [
     component: DoctorsCardComponent,
   },
   {
+    path: 'viewDoctors/:category',
+    component: DoctorsCardComponent,
+  },
+  {
     path: 'viewSpecialization',
     component: ViewSpecializationsComponent,
   },

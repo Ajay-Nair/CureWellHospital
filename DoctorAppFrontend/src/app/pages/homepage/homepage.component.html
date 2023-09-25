@@ -1,28 +1,12 @@
 <app-title-bar></app-title-bar>
+<app-menu-button></app-menu-button>
 <div class="row">
-    <div class="md-col-3 p-3">
-        <div class="d-flex p-3">
-            <app-side-bar></app-side-bar>
-            <!-- this is the menu bar icon -->
-            <div>
-                <i class="menu fa-solid fa-bars fa-2x p-3" id="menuIcon" (click)="sideMenuToggle()"
-                    style="color: white"></i>
-            </div>
-        </div>
+  <div class="col-lg-3 col-md-12 p-3" id="side-menu">
+    <app-side-bar></app-side-bar>
+  </div>
+  <div class="col-lg-9 col-md-12 p-1">
+    <div class="row w-100 p-3">
+      <router-outlet></router-outlet>
     </div>
-    <div class="md-col-9 p-3">
-        <div class="row">
-            <div class="container-fluid">
-                <div class="md-col-10">
-
-                </div>
-                <div class="md-col-1 mt-2">
-                    <app-filter-menu></app-filter-menu>
-                </div>
-            </div>
-        </div>
-        <div class="row p-3">
-            <router-outlet></router-outlet>
-        </div>
-    </div>
+  </div>
 </div>

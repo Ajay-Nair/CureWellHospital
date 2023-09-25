@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-doctors-card',
@@ -6,6 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./doctors-card.component.css'],
 })
 export class DoctorsCardComponent {
+  //receiving the category to be received from filter button
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe(params => {
+      this.category = params['category']
+
+    });
+  }
+  // used to assign the category
+  category: any;
+
+  // doctor data
   doctors = [
     {
       id: 1,

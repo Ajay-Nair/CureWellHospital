@@ -15,6 +15,7 @@ import { ViewDoctorsComponent } from './pages/view-doctors/view-doctors.componen
 import { ViewSpecializationsComponent } from './pages/view-specializations/view-specializations.component';
 import { ViewScheduleComponent } from './pages/view-schedule/view-schedule.component';
 import { DoctorsCardComponent } from './components/doctors-card/doctors-card.component';
+import { MenuButtonComponent } from './components/menu-button/menu-button.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { DoctorsCardComponent } from './components/doctors-card/doctors-card.com
     ViewSpecializationsComponent,
     ViewScheduleComponent,
     DoctorsCardComponent,
+    MenuButtonComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

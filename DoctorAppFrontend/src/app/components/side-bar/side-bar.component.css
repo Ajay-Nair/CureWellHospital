@@ -2,8 +2,8 @@
 .sidebar{
     background-color: #30343D;
     font-family: 'Montserrat', sans-serif;
-    min-width: 250px;
-    max-width: 250px;
+    /* min-width: 250px;
+    max-width: 250px; */
     margin-left: -350px;
 }
 
@@ -14,7 +14,6 @@
 li{
     list-style: none;
     padding: 10px;
-    width: 100%;
     background-color: #3C414D;
     border-radius: 10px;
     color: white;
@@ -27,4 +26,8 @@ li:hover{
 
 .rotate{
     transform: rotate(180deg)
+}
+
+.hide-sidebar{
+    display: none;
 }
