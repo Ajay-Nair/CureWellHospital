@@ -1,4 +1,4 @@
-<div>
+<div class="surgery">
     <table class="table table-bordered">
         <thead class="thead thead-dark">
             <th>Surgery Id</th>
@@ -17,8 +17,15 @@
                 <td>{{surgery.startTime}}</td>
                 <td>{{surgery.endTime}}</td>
                 <td>{{surgery.surgeryCategory}}</td>
-                <td> <button class="btn btn-dark">Edit Surgery Time</button></td>
+                <td> <button class="btn btn-danger" (click)="openPopup(surgery)">Edit Surgery Time</button></td>
             </tr>
         </tbody>
     </table>
 </div>
+
+<ng-container *ngIf="showPopup">
+    <app-update-surgery
+      [surgery_update]="surgery"
+      (close)="onPopupClose($event)"
+    ></app-update-surgery>
+  </ng-container>
