@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ISurgery } from 'src/app/models/surgery.model';
+import { ISurgery } from '../../models/surgery.model';
+import { DataService } from 'src/app/services/data.service';
+
 
 @Component({
   selector: 'app-surgery-list',
@@ -8,15 +10,14 @@ import { ISurgery } from 'src/app/models/surgery.model';
 })
 export class SurgeryListComponent {
 
-  surgeries: ISurgery[] = [{ surgeryId: 5001,
-                             doctorId: 1001, 
-                             surgeryDate: new Date(), 
-                             startTime: 12.00,
-                              endTime: 1.00, 
-                              surgeryCategory: 'ANE' }];
-
-  constructor() {
+  surgeries: ISurgery[] = [];
   
+  constructor(private dataService : DataService) {
+    
+    this.dataService.getSurgeryData().subscribe((response: ISurgery[]) => {
+        this.surgeries = response;
+    })
   }
+
 
 }

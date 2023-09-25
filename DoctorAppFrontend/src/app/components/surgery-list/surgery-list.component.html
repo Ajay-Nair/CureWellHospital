@@ -13,7 +13,7 @@
             <tr *ngFor="let surgery of surgeries">
                 <td>{{surgery.surgeryId}}</td>
                 <td>{{surgery.doctorId}}</td>
-                <td>{{surgery.surgeryDate.getDate()}}</td>
+                <td>{{surgery.surgeryDate}}</td> <!--TODO: fix formatting-->
                 <td>{{surgery.startTime}}</td>
                 <td>{{surgery.endTime}}</td>
                 <td>{{surgery.surgeryCategory}}</td>
