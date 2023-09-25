@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,11 @@ import { FilterMenuComponent } from './components/filter-menu/filter-menu.compon
 import { ViewDoctorsComponent } from './pages/view-doctors/view-doctors.component';
 import { ViewSpecializationsComponent } from './pages/view-specializations/view-specializations.component';
 import { ViewScheduleComponent } from './pages/view-schedule/view-schedule.component';
+import { DoctorsCardComponent } from './components/doctors-card/doctors-card.component';
+import { MenuButtonComponent } from './components/menu-button/menu-button.component';
+import {HttpClientModule} from '@angular/common/http';
 import { UpdateSurgeryComponent } from './components/update-surgery/update-surgery.component';
+import { AddDoctorComponent } from './components/add-doctor/add-doctor.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +35,12 @@ import { UpdateSurgeryComponent } from './components/update-surgery/update-surge
     ViewDoctorsComponent,
     ViewSpecializationsComponent,
     ViewScheduleComponent,
+    DoctorsCardComponent,
+    MenuButtonComponent,
     UpdateSurgeryComponent,
+    AddDoctorComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

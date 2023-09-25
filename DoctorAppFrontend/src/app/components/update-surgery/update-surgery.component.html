@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             <label>Start Time</label>
-            <input type="text"  class="form-control" name="stime" id="stime"
+            <input type="text"  class="form-control" [(ngModel)]="new_startTime" name="stime" id="stime"
                 placeholder="{{surgery_update.startTime}}">
         </div>
         <div class="form-group">
@@ -26,7 +26,7 @@
             <input type="text" class="form-control" name="etime" id="etime"
                 placeholder="{{surgery_update.endTime}}">
         </div>
-        <input type="button" class="btn btn-danger" value="Submit">
+        <input type="button" class="btn btn-danger" (click)="OnSubmit()" value="Submit">
         <input type="button" (click)="closePopup()" class="btn btn-danger" value="Close">
     </form>
 
