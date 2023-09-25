@@ -1,0 +1,14 @@
+[
+    {
+        "specializationCode": "ANE",
+        "specializationName": "Anesthesiologist"
+    },
+    {
+        "specializationCode": "CAR",
+        "specializationName": "Cardiologist"
+    },
+    {
+        "specializationCode": "GYN",
+        "specializationName": "Gynecologist"
+    }
+]

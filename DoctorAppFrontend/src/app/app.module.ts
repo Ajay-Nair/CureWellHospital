@@ -16,6 +16,7 @@ import { ViewSpecializationsComponent } from './pages/view-specializations/view-
 import { ViewScheduleComponent } from './pages/view-schedule/view-schedule.component';
 import { DoctorsCardComponent } from './components/doctors-card/doctors-card.component';
 import { MenuButtonComponent } from './components/menu-button/menu-button.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { MenuButtonComponent } from './components/menu-button/menu-button.compon
     DoctorsCardComponent,
     MenuButtonComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
