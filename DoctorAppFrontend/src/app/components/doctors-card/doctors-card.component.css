@@ -1,8 +1,5 @@
 .card{
     background-color: #3C414D !important;
-    
+    min-width: 12rem;    
 }
-img{
-    /* min-width: auto; */
-    /* height:140px; */
-}
+

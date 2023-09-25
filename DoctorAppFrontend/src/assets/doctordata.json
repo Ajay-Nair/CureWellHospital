@@ -1,10 +1,37 @@
 [
     {
         "doctorId": 1,
-        "doctorName": "Mark"
+        "doctorName": "Mark",
+        "specializationName": "Anesthesiologist"
     },
     {
         "doctorId": 2,
-        "doctorName": "Lark"
+        "doctorName": "Lark",
+        "specializationName": "Cardiologist"
+    },
+    {
+        "doctorId": 3,
+        "doctorName": "Clark",
+        "specializationName": "Gynecologist"
+    },
+    {
+        "doctorId": 4,
+        "doctorName": "John",
+        "specializationName": "Gynecologist"
+    },
+    {
+        "doctorId": 5,
+        "doctorName": "Garry",
+        "specializationName": "Cardiologist"
+    },
+    {
+        "doctorId": 6,
+        "doctorName": "Kent",
+        "specializationName": "Cardiologist"
+    },
+    {
+        "doctorId": 7,
+        "doctorName": "Tom",
+        "specializationName": "Anesthesiologist"
     }
 ]

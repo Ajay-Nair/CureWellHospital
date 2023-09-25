@@ -18,8 +18,4 @@ export class SideBarComponent {
     let menuIcon = document.getElementById('menuIcon');
     menuIcon?.classList.toggle('rotate');
   }
-
-  sendCategory(category: string){
-    this.router.navigate(['/details', category]);
-  }
 }

@@ -12,21 +12,33 @@ import { ISpecialization } from 'src/app/models/specialization.model';
   styleUrls: ['./doctors-card.component.css'],
 })
 export class DoctorsCardComponent {
-  //receiving the category to be received from filter button
   constructor(private route: ActivatedRoute, private DoctorData: DataService) {
-    this.route.params.subscribe((params) => {
-      this.category = params['category'];
+
+    this.route.paramMap.subscribe(params => {
+      // Access the route parameters
+      this.category = params.get('category');
+      
+      // If the category parameter is null, we set the default value as all
+      if(this.category == null)
+      this.category = 'All'
+      
+      // Receiving the doctor data from the data service
+      this.DoctorData.getDoctorData().subscribe((response) => {
+        
+        // Filtering data according to the category
+        if (this.category != 'All') {
+          this.doctors = response.filter(x => x.specializationName == this.category)
+        }
+        else{
+          this.doctors = response
+        }
+      });
+
     });
   }
   // used to assign the category
-  category: any;
+  category: any = 'All';
 
   doctors: IDoctor[] = [];
 
-  ngOnInit() {
-    this.DoctorData.getDoctorData().subscribe((response) => {
-      this.doctors = response;
-      console.log(this.doctors);
-    });
-  }
 }

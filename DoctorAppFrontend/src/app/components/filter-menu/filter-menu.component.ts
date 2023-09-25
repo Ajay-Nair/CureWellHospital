@@ -12,12 +12,12 @@ export class FilterMenuComponent {
     this.DoctorCategory = 'All'
   }
 
-  DoctorCategory
+  DoctorCategory:string;
 
   switchCategory(category: string) {
     //to display the category heading
     this.DoctorCategory = category
-    //to send the category to doctor card component
+    //to send the category to doctor card component to filter out the data
     this.router.navigate(['/viewDoctors', category]);
   }
 }
