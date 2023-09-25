@@ -21,8 +21,7 @@ export class DoctorsCardComponent {
   // used to assign the category
   category: any;
 
-  //doctors: IDoctor[]=[];
-  doctors: any;
+  doctors: IDoctor[] = [];
 
   ngOnInit() {
     this.DoctorData.getDoctorData().subscribe((response) => {
