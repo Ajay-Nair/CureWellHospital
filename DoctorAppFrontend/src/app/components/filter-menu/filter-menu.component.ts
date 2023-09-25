@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter-menu',
@@ -8,11 +8,18 @@ import { Router } from '@angular/router';
 })
 export class FilterMenuComponent {
 
-  constructor(private router: Router) {
-    this.DoctorCategory = 'All'
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.route.paramMap.subscribe(params => {
+      if (params.get('category')) {
+        this.DoctorCategory = params.get('category')
+      }
+      else {
+        this.DoctorCategory = 'All'
+      }
+    })
   }
 
-  DoctorCategory:string;
+  DoctorCategory: any;
 
   switchCategory(category: string) {
     //to display the category heading
