@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ISurgery } from 'src/app/models/surgery.model';
+import { ISurgery } from '../../models/surgery.model';
+import { DataService } from 'src/app/services/data.service';
+
 
 @Component({
   selector: 'app-surgery-list',
@@ -7,8 +9,12 @@ import { ISurgery } from 'src/app/models/surgery.model';
   styleUrls: ['./surgery-list.component.css']
 })
 export class SurgeryListComponent {
-  constructor() {
-  
+
+  constructor(private dataService : DataService) {
+    
+    this.dataService.getSurgeryData().subscribe((response: ISurgery[]) => {
+        this.surgeries = response;
+    })
   }
   showPopup = false;
   surgery:any;
@@ -35,7 +41,5 @@ export class SurgeryListComponent {
                                  endTime: 1.00, 
                                  surgeryCategory: 'ANE'
                               }];
-
-
 
 }

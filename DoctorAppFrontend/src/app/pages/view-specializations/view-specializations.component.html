@@ -1,18 +1,21 @@
-<table class="table table-dark">
-    <thead style="color: white;">
+<div class="container m-5">
+  <table class="table table-borderless table-striped" style="background-color: #3C414D;">
+    <thead style="color: white; background-color: #464b57;">
       <tr>
         <th>Specialization Code</th>
         <th>Specialization Name</th>
         <th>Action</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody style="color: white;">
       <tr *ngFor="let s of specializations">
         <td>{{ s.specializationCode}}</td>
         <td>{{ s.specializationName}}</td>
         <td>
-          <button style="background-color: #59AE55; border-radius: 10px; padding:10px; color: white; font-size: small; border:none;">View Doctors</button>
+          <button style="background-color: #59AE55; border-radius: 10px; padding:10px; color: white; font-size: small; border:none;" (click)="showDoctors(s.specializationName)">View Doctors</button>
         </td>
       </tr>
     </tbody>
   </table>
+
+</div>

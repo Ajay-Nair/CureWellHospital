@@ -24,10 +24,6 @@ li:hover{
     background-color: #59AE55;
 }
 
-.rotate{
-    transform: rotate(180deg)
-}
-
 .hide-sidebar{
     display: none;
 }

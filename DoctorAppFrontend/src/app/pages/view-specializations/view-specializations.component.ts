@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { SpecializationService } from 'src/app/services/specialization.service';
 
 @Component({
@@ -11,9 +12,11 @@ export class ViewSpecializationsComponent {
   /**
    *
    */
-  constructor(private specialization:SpecializationService) {
+  constructor(private specialization:SpecializationService, private router: Router) {
   }
 
+  showDoctors(category: string){
+    this.router.navigate(['/viewDoctors', category]);  }
   ngOnInit(){
     this.specialization.getSpecialization().subscribe(response => {
       this.specializations = response;

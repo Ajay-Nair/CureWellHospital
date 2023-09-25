@@ -5,13 +5,16 @@
   <div class="row text-white">
     <ng-container *ngFor="let doctor of doctors">
       <div class="col-md-4 col-xl-3 col-sm-6">
-        <div class="card m-3">
-          <div class="card-header text-center">
-            <img src="{{ doctor.url }}" alt="" class="img-fluid" />
-          </div>
+        <div class="card m-3 text-center">
+          <img
+            src="https://i.pinimg.com/originals/eb/36/af/eb36af4cd6a2295a22ac7cdb31b0f1a0.jpg"
+            alt=""
+            class="img-fluid card-img-top"
+          />
+
           <div class="card-body">
-            <h5 class="card-title">{{ doctor.name }}</h5>
-            <p class="card-text">{{ doctor.specification }}</p>
+            <h5 class="card-title">{{ doctor.doctorName }}</h5>
+            <p class="card-text">{{ doctor.specializationName }}</p>
             <a href="#" class="btn btn-primary">Learn More</a>
           </div>
         </div>
