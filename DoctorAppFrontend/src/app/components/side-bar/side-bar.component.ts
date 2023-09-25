@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-bar',
@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 })
 export class SideBarComponent {
   constructor(private router: Router){
-
   }
 
   sideMenuToggle() {
@@ -18,4 +17,10 @@ export class SideBarComponent {
     let menuIcon = document.getElementById('menuIcon');
     menuIcon?.classList.toggle('rotate');
   }
+
+  isRouteActive(route: string): boolean {
+    return this.router.url.includes(route);
+  }
+
+  
 }

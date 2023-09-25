@@ -1,6 +1,6 @@
 <div class="container p-3">
   <div class="row p-3">
-    <app-filter-menu></app-filter-menu>
+    <app-filter-menu class="w-100"></app-filter-menu>
   </div>
   <div class="row text-white">
     <ng-container *ngFor="let doctor of doctors">
@@ -15,7 +15,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ doctor.doctorName }}</h5>
             <p class="card-text">{{ doctor.specializationName }}</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <a href="#" class="btn btn-primary">Edit Doctor</a>
           </div>
         </div>
       </div>

@@ -8,19 +8,23 @@ import { SpecializationService } from 'src/app/services/specialization.service';
   styleUrls: ['./view-specializations.component.css']
 })
 export class ViewSpecializationsComponent {
-  specializations:any;
+  specializations: any;
   /**
    *
    */
-  constructor(private specialization:SpecializationService, private router: Router) {
+  constructor(private specialization: SpecializationService, private router: Router) {
   }
 
-  showDoctors(category: string){
-    this.router.navigate(['/viewDoctors', category]);  }
-  ngOnInit(){
+
+  // to navigate to doctor card component with the category filter
+  showDoctors(category: string) {
+    this.router.navigate(['/viewDoctors', category]);
+  }
+
+  ngOnInit() {
     this.specialization.getSpecialization().subscribe(response => {
       this.specializations = response;
-      console.log(this.specializations)
+      // console.log(this.specializations)
     })
   }
 }
