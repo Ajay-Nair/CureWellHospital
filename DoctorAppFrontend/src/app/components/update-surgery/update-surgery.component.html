@@ -1,6 +1,6 @@
 <div class="update_surgery card popup">
 
-    <form>
+    <form >
         <div class="form-group">
             <label>DoctorId</label>
             <input type="text" readonly class="form-control" name="id" id="id"
@@ -19,12 +19,12 @@
         <div class="form-group">
             <label>Start Time</label>
             <input type="time"  class="form-control" [(ngModel)]="new_startTime" name="stime" id="stime"
-                placeholder="{{surgery_update.StartTime}}">
+                placeholder="{{surgery_update.StartTime}}" required>
         </div>
         <div class="form-group">
             <label>End Time</label>
             <input type="time" class="form-control" name="etime" id="etime"
-                placeholder="{{surgery_update.EndTime}}">
+                placeholder="{{surgery_update.EndTime}}" required>
         </div>
         <input type="button" class="btn btn-danger" (click)="OnSubmit()" value="Submit">
         <input type="button" (click)="closePopup()" class="btn btn-danger" value="Close">
