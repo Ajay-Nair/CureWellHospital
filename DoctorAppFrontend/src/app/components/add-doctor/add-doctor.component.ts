@@ -59,7 +59,7 @@ export class AddDoctorComponent {
   }
 
   OnSubmit() {
-    this.date = this.sdate;
+    //  this.date = this.sdate;
     console.log(this.DoctorName, this.Specialization, this.date);
     this.DoctorData.postDoctorData(
       this.DoctorName,
