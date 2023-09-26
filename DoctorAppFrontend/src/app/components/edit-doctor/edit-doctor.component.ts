@@ -25,7 +25,6 @@ export class EditDoctorComponent {
     this.dataservice.putDoctorData(this.DoctorName,this.data.DoctorId).subscribe(
       (response:IDoctor) =>{
         this.data = response;
-        console.log(response.toString());
         window.location.reload();
       },
     (error:any) => {
