@@ -9,10 +9,10 @@
     </thead>
     <tbody style="color: white;">
       <tr *ngFor="let s of specializations">
-        <td>{{ s.specializationCode}}</td>
-        <td>{{ s.specializationName}}</td>
+        <td>{{ s.SpecializationCode}}</td>
+        <td>{{ s.SpecializationName}}</td>
         <td>
-          <button style="background-color: #59AE55; border-radius: 10px; padding:10px; color: white; font-size: small; border:none;" (click)="showDoctors(s.specializationCode)">View Doctors</button>
+          <button style="background-color: #59AE55; border-radius: 10px; padding:10px; color: white; font-size: small; border:none;" (click)="showDoctors(s.SpecializationCode)">View Doctors</button>
         </td>
       </tr>
     </tbody>

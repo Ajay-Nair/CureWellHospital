@@ -14,8 +14,8 @@
                 <td>{{surgery.SurgeryId}}</td>
                 <td>{{surgery.DoctorId}}</td>
                 <td>{{surgery.SurgeryDate}}</td> <!--TODO: fix formatting-->
-                <td>{{surgery.StartTime}}</td>
-                <td>{{surgery.EndTime}}</td>
+                <td>{{surgery.StartTime.toFixed(2)}}</td>
+                <td>{{surgery.EndTime.toFixed(2)}}</td>
                 <td>{{surgery.SurgeryCategory}}</td>
                 <td> <button class="btn btn-danger" (click)="openPopup(surgery)">Edit Surgery Time</button></td>
             </tr>

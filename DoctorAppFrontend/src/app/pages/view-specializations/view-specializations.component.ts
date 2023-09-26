@@ -24,7 +24,6 @@ export class ViewSpecializationsComponent {
   ngOnInit() {
     this.specialization.getSpecialization().subscribe(response => {
       this.specializations = response;
-      // console.log(this.specializations)
     })
   }
 }
