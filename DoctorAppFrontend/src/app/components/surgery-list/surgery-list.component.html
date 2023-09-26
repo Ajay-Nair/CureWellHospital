@@ -1,0 +1,32 @@
+<div class="surgery">
+    <table class="table table-borderless table-striped" style="background-color: #3C414D;">
+        <thead class="thead" style="color: white; background-color: #464b57;">
+            <th>Surgery Id</th>
+            <th>Doctor Id</th>
+            <th>Surgery Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Surgery Category</th>
+            <th>Action</th>
+        </thead>
+        <tbody class="tbody-dark text-light">
+            <tr *ngFor="let surgery of surgeries">
+                <td>{{surgery.SurgeryId}}</td>
+                <td>{{surgery.DoctorId}}</td>
+                <td>{{ formatDate(surgery.SurgeryDate)}}</td>
+
+                <td>{{appendToTime(surgery.StartTime)}}</td>
+                <td>{{appendToTime(surgery.EndTime)}}</td>
+                <td>{{surgery.SurgeryCategory}}</td>
+                <td> <button class="btn btn-danger" (click)="openPopup(surgery)">Edit Surgery Time</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-container *ngIf="showPopup">
+    <app-update-surgery
+      [surgery_update]="surgery"
+      (close)="onPopupClose($event)"
+    ></app-update-surgery>
+  </ng-container>

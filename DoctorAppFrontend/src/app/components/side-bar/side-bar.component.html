@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="sidebar active" id="sideBar">
+      <!-- <ul>
+        <li class="my-2 text-center" routerLink="viewDoctors">View Doctors</li>
+        <li class="my-2 text-center" routerLink="viewSpecialization">
+          View Specialization
+        </li>
+        <li class="my-2 text-center" routerLink="viewSchedule">
+          View Today's Schedule
+        </li>
+      </ul> -->
+      <div class="row">
+        <div class="col-lg-12 col-md-3">
+          <li class="my-2 text-center" [ngClass]="{ 'selected': isRouteActive('viewDoctors') }" routerLink="viewDoctors">View Doctors</li>
+        </div>
+        <div class="col-lg-12 col-md-4">
+          <li class="my-2 text-center" [ngClass]="{ 'selected': isRouteActive('viewSpecialization') }" routerLink="viewSpecialization">
+            View Specialization
+          </li>
+        </div>
+        <div class="col-lg-12 col-md-4">
+          <li class="my-2 text-center" [ngClass]="{ 'selected': isRouteActive('viewSchedule') }" routerLink="viewSchedule">
+            View Today's Schedule
+          </li>
+        </div>
+      </div>
+  </div>
+  <!-- this is the menu bar icon -->
+</div>

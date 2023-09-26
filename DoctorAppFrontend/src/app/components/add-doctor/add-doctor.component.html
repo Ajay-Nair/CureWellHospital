@@ -1,0 +1,89 @@
+<div class="popup-overlay"></div>
+<div class="card popup">
+  <div class="{{ alertClass }}" role="alert">
+    {{ textMessage }}
+  </div>
+  <form [formGroup]="addDoctorForm">
+    <div class="mb-3">
+      <div class="form-group mb-0">
+        <label>Doctor Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="dname"
+          id="dname"
+          [(ngModel)]="DoctorName"
+          placeholder="Enter Doctor Name"
+          formControlName="dname"
+          [class.is-invalid]="dname?.invalid && dname?.touched"
+        />
+      </div>
+      <div *ngIf="dname?.errors && dname?.touched">
+        <small class="text-danger" *ngIf="dname?.errors?.['required']"
+          >Doctors Name is required.</small
+        >
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <div class="form-group mb-0">
+        <label for="inputState">Specialization</label>
+        <select
+          id="inputState"
+          class="form-control"
+          name="select"
+          [(ngModel)]="Specialization"
+          formControlName="dspecialization"
+          [class.is-invalid]="
+            dspecialization?.invalid && dspecialization?.touched
+          "
+        >
+          <option value="Non">None</option>
+          <option value="ANE">ANE</option>
+          <option value="GYN">GYN</option>
+          <option value="CAR">CAR</option>
+        </select>
+      </div>
+      <div *ngIf="dspecialization?.errors && dspecialization?.touched">
+        <small class="text-danger" *ngIf="dspecialization?.errors?.['required']"
+          >Please select a Specialization.</small
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Date Of Specialization </label>
+      <input
+        type="date"
+        class="form-control"
+        name="sdate"
+        id="sdate"
+        [(ngModel)]="date"
+        formControlName="sdate"
+        [class.is-invalid]="
+          (sdate?.hasError('required') || sdate?.hasError('pastDate')) &&
+          sdate?.touched
+        "
+      />
+      <div *ngIf="sdate?.hasError('required') && sdate?.touched">
+        <small class="text-danger">Date is required.</small>
+      </div>
+      <div *ngIf="sdate?.hasError('pastDate') && sdate?.touched">
+        <small class="text-danger">Please enter a valid date.</small>
+      </div>
+    </div>
+
+    <input
+      type="button"
+      class="btn btn-success mr-3"
+      (click)="OnSubmit()"
+      value="Submit"
+      [disabled]="addDoctorForm.invalid"
+    />
+    <input
+      type="button"
+      (click)="closePopup()"
+      class="btn btn-danger"
+      value="Close"
+    />
+  </form>
+</div>

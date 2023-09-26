@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="container w-100 center">
+            <div class="dropdown mr-3" style="display: inline-block;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="display: inline-block; background-color: #59AE55; color: white;">
+                    Filter doctors
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <button class="dropdown-item"  (click)="switchCategory('All')">All</button>
+                    <button class="dropdown-item"  (click)="switchCategory('ANE')">Anesthesiologist</button>
+                    <button class="dropdown-item"  (click)="switchCategory('CAR')">Cardiologist</button>
+                    <button class="dropdown-item"  (click)="switchCategory('GYN')">Gynecologist</button>
+                </div>
+            </div>
+            <div class="h2 mt-3" style="display: inline-block;">
+                <h3 style="color: white;">Viewing <span style="color: #59AE55;">{{ display }}</span> doctors</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mx-3">
+        <!-- <div class="d-flex justify-content-end">
+            Button to update the doctor details
+            <button class="btn btn-primary" (click)="openPopup()">Add Doctor</button>
+        </div> -->
+
+        <div class="add-doctor">
+            <img src="/assets/images/plus.png" (click)="openPopup()" alt="Add Doctor">
+        </div>
+    </div>
+</div>
+
+<ng-container *ngIf="showPopup">
+    <app-add-doctor
+      (close)="onPopupClose($event)"
+    ></app-add-doctor>
+  </ng-container>

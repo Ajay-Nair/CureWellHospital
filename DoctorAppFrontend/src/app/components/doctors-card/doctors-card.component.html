@@ -1,0 +1,31 @@
+<div class="container p-3">
+  <div class="row p-3">
+    <app-filter-menu class="w-100"></app-filter-menu>
+  </div>
+  <div class="row text-white">
+    <ng-container *ngFor="let doctor of doctors">
+      <div>
+        <div class="card m-3 text-center">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqxgKlhxJ67t9QYQt7Kdie6pMoshDTww9hbg&usqp=CAU"
+            alt=""
+            class="img-fluid card-img-top"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ doctor.DoctorName}}</h5>
+            <p class="card-text">{{ doctor.SpecializationName}}</p>
+            <button class="btn btn-success mr-3 px-4" style="display:inline-block" (click)="openPopup(doctor)">Edit </button>
+            <button class="btn btn-danger w-30" style="display:inline-block" (click)="deleteDoctor(doctor.DoctorId)">Delete</button>
+          
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<ng-container *ngIf="showPopup" style="background-color: #3C414D;">
+  <app-edit-doctor
+  [data] = "data"
+    (close)="onPopupClose($event)"
+  ></app-edit-doctor>
+</ng-container>
