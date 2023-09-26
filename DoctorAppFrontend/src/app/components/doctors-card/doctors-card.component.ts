@@ -27,9 +27,12 @@ export class DoctorsCardComponent {
       if (this.category !='All' )
       {
         this.DoctorData.getSpecializedDoctorData(this.category).subscribe((response)=>{
-            this.doctors= response.filter(x => x.SpecializationCode == this.category)
+          this.doctors = response;
           // console.log(response)
             
+        },
+        (error:any) => {
+            console.log(error);
         })
       }
       else{
@@ -74,5 +77,12 @@ export class DoctorsCardComponent {
       this.showPopup = false;
     }
 
+    deleteDoctor(doctorId : any){
+      this.DoctorData.deleteDoctor(doctorId).subscribe((response: any) => {
+        console.log("Doctor deleted"+response);
+        window.location.reload();
+      })
+      
+    }
 
 }

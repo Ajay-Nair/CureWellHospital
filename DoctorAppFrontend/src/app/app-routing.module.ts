@@ -9,15 +9,15 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 const routes: Routes = [
   {
     path: '',
-    component: DoctorsCardComponent
+    component: ViewDoctorsComponent
   },
   {
     path: 'viewDoctors',
-    component: DoctorsCardComponent,
+    component: ViewDoctorsComponent,
   },
   {
     path: 'viewDoctors/:category',
-    component: DoctorsCardComponent,
+    component: ViewDoctorsComponent,
   },
   {
     path: 'viewSpecialization',

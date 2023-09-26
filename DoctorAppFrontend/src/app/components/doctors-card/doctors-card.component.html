@@ -14,7 +14,9 @@
           <div class="card-body">
             <h5 class="card-title">{{ doctor.DoctorName}}</h5>
             <p class="card-text">{{ doctor.SpecializationName}}</p>
-            <button class="btn btn-primary "(click)="openPopup(doctor)">Edit Doctor</button>
+            <button class="btn btn-success mr-3 px-4" style="display:inline-block" (click)="openPopup(doctor)">Edit </button>
+            <button class="btn btn-danger w-30" style="display:inline-block" (click)="deleteDoctor(doctor.DoctorId)">Delete</button>
+          
           </div>
         </div>
       </div>

@@ -48,4 +48,8 @@ export class DataService {
     return this.client.put<any>(this.url+"doctors",data);
   }
 
+  deleteDoctor(data: number):Observable<any>{
+    return this.client.delete<any>(this.url+"doctors"+"/"+data);
+    
+  }
 }
