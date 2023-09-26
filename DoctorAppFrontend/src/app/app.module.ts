@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +17,7 @@ import { ViewSpecializationsComponent } from './pages/view-specializations/view-
 import { ViewScheduleComponent } from './pages/view-schedule/view-schedule.component';
 import { DoctorsCardComponent } from './components/doctors-card/doctors-card.component';
 import { MenuButtonComponent } from './components/menu-button/menu-button.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { UpdateSurgeryComponent } from './components/update-surgery/update-surgery.component';
 import { AddDoctorComponent } from './components/add-doctor/add-doctor.component';
 import { EditDoctorComponent } from './components/edit-doctor/edit-doctor.component';
@@ -42,7 +42,13 @@ import { EditDoctorComponent } from './components/edit-doctor/edit-doctor.compon
     AddDoctorComponent,
     EditDoctorComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
