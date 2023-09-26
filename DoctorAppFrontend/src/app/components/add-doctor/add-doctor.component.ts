@@ -14,7 +14,8 @@ import {
 const dateValidator = (
   control: AbstractControl
 ): { [key: string]: boolean } | null => {
-  if (control.value && control.touched) {
+  const value = control.value;
+  if (control.value) {
     // custom date validation logic
     const selectedDate = new Date(control.value);
     const currentDate = new Date();
@@ -58,6 +59,7 @@ export class AddDoctorComponent {
   }
 
   OnSubmit() {
+    this.date = this.sdate;
     console.log(this.DoctorName, this.Specialization, this.date);
     this.DoctorData.postDoctorData(
       this.DoctorName,
