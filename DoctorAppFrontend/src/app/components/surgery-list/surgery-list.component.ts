@@ -9,14 +9,17 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class SurgeryListComponent {
 
+  surgeries: ISurgery[] = [];
+  showPopup = false;
+  surgery:any;
+
   constructor(private dataService : DataService) {
     
     this.dataService.getSurgeryData().subscribe((response: ISurgery[]) => {
         this.surgeries = response;
     })
   }
-  showPopup = false;
-  surgery:any;
+  
   openPopup(surgery: ISurgery): void {
     this.surgery = surgery;
     this.showPopup = true;
@@ -26,7 +29,14 @@ export class SurgeryListComponent {
 
     this.showPopup = false;
   }
-  surgeries: ISurgery[] = [];
+  
+  appendToTime(surgeryTime : number):string{
+    const time  = surgeryTime.toFixed(2).toString();
+    return time.length<5?"0"+time:time  
+  }
 
-
+  formatDate(surgeryDate? : Date):string{
+      var sDate = surgeryDate?.toString().split('T')[0]
+      return sDate?sDate:""
+  }
 }
