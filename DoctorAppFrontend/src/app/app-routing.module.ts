@@ -4,8 +4,13 @@ import { ViewDoctorsComponent } from './pages/view-doctors/view-doctors.componen
 import { ViewSpecializationsComponent } from './pages/view-specializations/view-specializations.component';
 import { DoctorsCardComponent } from './components/doctors-card/doctors-card.component';
 import { SurgeryListComponent } from './components/surgery-list/surgery-list.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: DoctorsCardComponent
+  },
   {
     path: 'viewDoctors',
     component: DoctorsCardComponent,
@@ -22,6 +27,10 @@ const routes: Routes = [
     path: 'viewSchedule',
     component: SurgeryListComponent,
   },
+  {
+    path: '**',
+    component: ErrorPageComponent
+  }
 ];
 
 @NgModule({

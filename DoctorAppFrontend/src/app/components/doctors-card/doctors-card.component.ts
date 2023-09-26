@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Data } from '@angular/router';
+import { ActivatedRoute, Data, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { IDoctor } from 'src/app/models/doctor.model';
 import { ISurgery } from 'src/app/models/surgery.model';
@@ -12,7 +12,7 @@ import { ISpecialization } from 'src/app/models/specialization.model';
   styleUrls: ['./doctors-card.component.css'],
 })
 export class DoctorsCardComponent {
-  constructor(private route: ActivatedRoute, private DoctorData: DataService) {
+  constructor(private route: ActivatedRoute, private router: Router, private DoctorData: DataService) {
 
     this.route.paramMap.subscribe(params => {
       // Access the route parameters
@@ -24,19 +24,21 @@ export class DoctorsCardComponent {
       
       // Receiving the doctor data from the data service
 
-      if (this.category !='All')
+      if (this.category !='All' )
       {
-        console.log(this.category);
         this.DoctorData.getSpecializedDoctorData(this.category).subscribe((response)=>{
             this.doctors= response.filter(x => x.SpecializationCode == this.category)
-          console.log(response)
+          // console.log(response)
             
         })
       }
       else{
         this.DoctorData.getDoctorData().subscribe((response) => {
           this.doctors = response;
-      });
+      });  
+    }
+    if(!['All', 'ANE', 'GYN', 'CAR'].includes(this.category)){
+      this.router.navigateByUrl('error-page')
     }
       // this.DoctorData.getDoctorData().subscribe((response) => {
         

@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FilterMenuComponent {
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, ) {
     this.route.paramMap.subscribe(params => {
       if (params.get('category')) {
         this.DoctorCategory = params.get('category')

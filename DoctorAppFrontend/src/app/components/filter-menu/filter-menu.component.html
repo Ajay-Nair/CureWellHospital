@@ -13,18 +13,23 @@
                     <button class="dropdown-item"  (click)="switchCategory('GYN')">Gynecologist</button>
                 </div>
             </div>
-            <div class="h2" style="display: inline-block;">
+            <div class="h2 mt-3" style="display: inline-block;">
                 <h3 style="color: white;">Viewing <span style="color: #59AE55;">{{ DoctorCategory }}</span> doctors.</h3>
             </div>
         </div>
     </div>
     <div class="col-md-3 mx-3">
-        <div class="d-flex justify-content-end">
-            <!-- Button to update the doctor details -->
+        <!-- <div class="d-flex justify-content-end">
+            Button to update the doctor details
             <button class="btn btn-primary" (click)="openPopup()">Add Doctor</button>
+        </div> -->
+
+        <div class="add-doctor">
+            <img src="/assets/images/plus.png" (click)="openPopup()" alt="Add Doctor">
         </div>
     </div>
 </div>
+
 <ng-container *ngIf="showPopup">
     <app-add-doctor
       (close)="onPopupClose($event)"

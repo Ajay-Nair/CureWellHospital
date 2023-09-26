@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateSurgeryComponent } from './components/update-surgery/update-surgery.component';
 import { AddDoctorComponent } from './components/add-doctor/add-doctor.component';
 import { EditDoctorComponent } from './components/edit-doctor/edit-doctor.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { EditDoctorComponent } from './components/edit-doctor/edit-doctor.compon
     UpdateSurgeryComponent,
     AddDoctorComponent,
     EditDoctorComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
