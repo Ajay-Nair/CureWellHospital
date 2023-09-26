@@ -22,6 +22,7 @@ import { UpdateSurgeryComponent } from './components/update-surgery/update-surge
 import { AddDoctorComponent } from './components/add-doctor/add-doctor.component';
 import { EditDoctorComponent } from './components/edit-doctor/edit-doctor.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { ValidateTimeDirective } from './directives/custom-validators/validate-time.directive';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     AddDoctorComponent,
     EditDoctorComponent,
     ErrorPageComponent,
+    ValidateTimeDirective,
   ],
   imports: [
     BrowserModule,

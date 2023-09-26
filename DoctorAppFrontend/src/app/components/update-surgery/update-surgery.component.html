@@ -1,6 +1,6 @@
 <div class="update_surgery card popup">
 
-    <form [formGroup]="updateSurgeryForm">
+    <form [formGroup]="updateSurgeryForm" #surgeryForm="ngForm" validateTime>
         <div class="form-group">
             <label>DoctorId</label>
             <input type="text" readonly class="form-control" name="id" id="id"
@@ -25,9 +25,13 @@
         </div>
         <div class="form-group">
             <label>End Time</label>
-            <input type="time" class="form-control" name="etime" id="etime" [(ngModel)]="new_endTime" formControlName="etime" [class.is-invalid]="etime?.invalid && etime?.touched">
-            <div *ngIf="etime?.errors && etime?.touched">
-                <small class="text-danger" *ngIf="etime?.errors?.['required']">End time is required.</small>
+            <input type="time" class="form-control" name="etime" id="etime" [(ngModel)]="new_endTime"  formControlName="etime" 
+                   [class.is-invalid]="(etime?.invalid || surgeryForm.errors?.['invalidTime']) && etime?.touched">
+            <div *ngIf="etime?.errors?.['required'] && etime?.touched">
+                <small class="text-danger" >End time is required.</small>
+            </div>
+            <div *ngIf="surgeryForm?.errors && surgeryForm?.errors?.['invalidTime']">
+                <small class="text-danger">End time must be greater than start time.</small>
             </div>
         </div>
         <input type="button" class="btn btn-success" (click)="OnSubmit()" style="margin-right: 10px;" value="Submit" [disabled]="updateSurgeryForm.invalid">

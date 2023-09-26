@@ -2,11 +2,8 @@ import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { UpdateSurgeryService } from 'src/app/services/update-surgery.service';
 import {
-  FormGroup,
-  FormControl,
   Validators,
   FormBuilder,
-  AbstractControl,
 } from '@angular/forms';
 
 @Component({
@@ -55,5 +52,5 @@ export class UpdateSurgeryComponent  {
   }
 
 
-  
+
 }
