@@ -28,7 +28,7 @@ const routes: Routes = [
     component: SurgeryListComponent,
   },
   {
-    path: '*',
+    path: '**',
     component: ErrorPageComponent
   }
 ];
