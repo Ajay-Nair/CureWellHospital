@@ -69,6 +69,7 @@ export class AddDoctorComponent {
       (response) => {
         this.textMessage = 'Added record successfully';
         this.alertClass = 'alert alert-success';
+        window.location.reload();
         console.log(response);
       },
       (error) => {
