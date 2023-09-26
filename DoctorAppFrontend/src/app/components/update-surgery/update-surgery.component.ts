@@ -1,6 +1,13 @@
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { UpdateSurgeryService } from 'src/app/services/update-surgery.service';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+  AbstractControl,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-update-surgery',
@@ -14,9 +21,20 @@ export class UpdateSurgeryComponent  {
   new_startTime: any;
   new_endTime: any;
   
-  constructor(private UpdateSurgeryService: UpdateSurgeryService,private router : Router){}
+  constructor(private UpdateSurgeryService: UpdateSurgeryService,private router : Router, private fb: FormBuilder){}
 
+  updateSurgeryForm = this.fb.group({
+    stime: [null, [Validators.required]],
+    etime: [null, [Validators.required]]
+  });
 
+  get stime() {
+    return this.updateSurgeryForm.get('stime');
+  }
+
+  get etime() {
+    return this.updateSurgeryForm.get('etime');
+  }
    OnSubmit()
    {
     console.log(this.new_startTime,this.new_endTime)
