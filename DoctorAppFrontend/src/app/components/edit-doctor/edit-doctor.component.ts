@@ -15,11 +15,6 @@ export class EditDoctorComponent {
 
   constructor(private dataservice : DataService){}
 
-  @Output() newItemEvent = new EventEmitter<string>();
-  addNewItem(value: any) {
-    this.newItemEvent.emit(value);
-  }
-
   OnSubmit():void
   {
     this.dataservice.putDoctorData(this.DoctorName,this.data.DoctorId).subscribe(
