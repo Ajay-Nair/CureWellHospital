@@ -19,7 +19,7 @@ export class AddDoctorComponent {
 
   OnSubmit()
   {console.log(this.DoctorName,this.Specialization,this.date);
-     this.DoctorData.putDoctorData(this.DoctorName,this.Specialization,this.date).subscribe((response)=>{
+     this.DoctorData.postDoctorData(this.DoctorName,this.Specialization,this.date).subscribe((response)=>{
     console.log(response);
   },
   (error)=>{

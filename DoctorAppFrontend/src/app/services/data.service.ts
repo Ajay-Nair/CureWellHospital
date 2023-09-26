@@ -29,7 +29,7 @@ export class DataService {
     return this.client.get<ISurgery[]>(this.url+'surgeries');
   }
 
-  putDoctorData(name:string,code:string,sdate:Date):Observable<IDrSpecialization>{
+  postDoctorData(name:string,code:string,sdate:Date):Observable<IDrSpecialization>{
 
     const data:IDrSpecialization = {
       DoctorName:name,
@@ -39,6 +39,13 @@ export class DataService {
       SpecializationDate:sdate
     }
     return this.client.post<IDrSpecialization>(this.url+'doctors',data)
+  }
+  putDoctorData(name:string,id:number):Observable<IDoctor>{
+    const data : IDoctor = {
+      DoctorName:name,
+      doctorId: id
+    }
+    return this.client.put<any>(this.url+"doctors",data);
   }
 
 }
