@@ -17,7 +17,7 @@ export class SurgeryListComponent {
   }
   showPopup = false;
   surgery:any;
-  openPopup(surgery: any): void {
+  openPopup(surgery: ISurgery): void {
     this.surgery = surgery;
     this.showPopup = true;
   }

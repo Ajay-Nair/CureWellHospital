@@ -1,23 +1,27 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ISurgery } from '../models/surgery.model';
+import { Time } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UpdateSurgeryService {
 
-  private url = '';
+  private url = 'http://localhost:57433/api/Home/surgeries';
   constructor(private client:HttpClient) { 
   }
 
-  updateSurgery(id:number,startTime:number,endTime:number): Observable<any>{
+  updateSurgery(id:number,startTime:string,endTime:string): Observable<ISurgery>{
 
-    const time = {
-      starttime:startTime,
-      endTime:endTime
+    const st = startTime.split(':')
+    const et = endTime.split(':')
+    const surgery:ISurgery = {
+      SurgeryId:id,
+      StartTime:parseFloat(st[0]+"."+st[1]),
+      EndTime:parseFloat(et[0]+"."+et[1])
     }
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.client.put(this.url,time,{headers});
+    return this.client.put<ISurgery>(this.url,surgery);
   }
 }
