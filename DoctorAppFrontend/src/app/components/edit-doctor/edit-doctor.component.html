@@ -1,21 +1,98 @@
-<div class=" card popup container-fluid" style="background-color: white">
+<div class="popup-overlay"></div>
+<div class="card popup container-fluid" style="background-color: white">
 
-    <form>
-        <div class="form-group">
-            <label>Doctor Id</label>
-            <input type="text" readonly  class="form-control" name="dname" id="dname" placeholder="{{data.DoctorId}}"
-                >
+    <form [formGroup]="doctorForm">
+  
+      <div class="form-group">
+  
+        <label>Doctor Id</label>
+  
+        <input
+  
+          type="text"
+  
+          readonly
+  
+          class="form-control"
+  
+          name="dname"
+  
+          id="dname"
+  
+          placeholder="{{ data.DoctorId }}"
+  
+        />
+  
+      </div>
+  
+      <div class="form-group">
+  
+        <label>Doctor Name</label>
+  
+        <input
+  
+          type="text"
+  
+          class="form-control"
+  
+          name="dname"
+  
+          id="dname"
+  
+          [(ngModel)]="DoctorName"
+  
+          placeholder="Enter Doctor Name"
+  
+          formControlName="dname"
+  
+        />
+  
+        <div
+  
+          *ngIf="
+  
+            doctorForm.get('dname')?.hasError('required') &&
+  
+            doctorForm.get('dname')?.touched
+  
+          "
+  
+        >
+  
+          <small class="text-danger">Doctor Name is required.</small>
+  
         </div>
-        <div class="form-group">
-            <label>Doctor Name</label>
-            <input type="text"  class="form-control" name="dname" id="dname" [(ngModel)]="DoctorName"
-                placeholder="Enter Doctor Name">
-        </div>
-
-      
-        <input type="button" class="btn btn-success mr-3 " (click)="OnSubmit()" value="Submit">
-        <input type="button" (click)="closePopup()" class="btn btn-danger" value="Close">
+  
+      </div>
+  
+   
+  
+      <input
+  
+        type="button"
+  
+        class="btn btn-success mr-3"
+  
+        (click)="OnSubmit()"
+  
+        value="Submit"
+  
+        [disabled]="doctorForm.invalid"
+  
+      />
+  
+      <input
+  
+        type="button"
+  
+        (click)="closePopup()"
+  
+        class="btn btn-danger"
+  
+        value="Close"
+  
+      />
+  
     </form>
-
-
-</div>
+  
+  </div>
