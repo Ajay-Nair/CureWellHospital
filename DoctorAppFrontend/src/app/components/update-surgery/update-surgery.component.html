@@ -30,7 +30,7 @@
                 <small class="text-danger" *ngIf="etime?.errors?.['required']">End time is required.</small>
             </div>
         </div>
-        <input type="button" class="btn btn-danger" (click)="OnSubmit()" style="margin-right: 10px;" value="Submit" [disabled]="updateSurgeryForm.invalid">
+        <input type="button" class="btn btn-success" (click)="OnSubmit()" style="margin-right: 10px;" value="Submit" [disabled]="updateSurgeryForm.invalid">
         <input type="button" (click)="closePopup()" class="btn btn-danger" value="Close">
     </form>
 
