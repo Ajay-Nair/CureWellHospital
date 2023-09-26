@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class SpecializationService {
-  private url = '/assets/specializationdata.json';
+  private url = 'http://localhost:57433/api/Home/specializations';
   constructor(private client:HttpClient) { 
   }
 
