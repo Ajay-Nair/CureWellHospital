@@ -23,22 +23,54 @@ export class DoctorsCardComponent {
       this.category = 'All'
       
       // Receiving the doctor data from the data service
-      this.DoctorData.getDoctorData().subscribe((response) => {
+
+      if (this.category !='All')
+      {
+        console.log(this.category);
+        this.DoctorData.getSpecializedDoctorData(this.category).subscribe((response)=>{
+            this.doctors= response.filter(x => x.SpecializationCode == this.category)
+          console.log(response)
+            
+        })
+      }
+      else{
+        this.DoctorData.getDoctorData().subscribe((response) => {
+          this.doctors = response;
+      });
+    }
+      // this.DoctorData.getDoctorData().subscribe((response) => {
         
         // Filtering data according to the category
-        if (this.category != 'All') {
-          this.doctors = response.filter(x => x.specializationName == this.category)
-        }
-        else{
-          this.doctors = response
-        }
-      });
+        // if (this.category != 'All') {
+        //   //  this.doctors = response.filter(x => x.specializationName == this.category)
+        // }
+        // else{
+        //   this.doctors = response
+        // }
+      // });
+
+      
 
     });
   }
   // used to assign the category
   category: any = 'All';
 
-  doctors: IDoctor[] = [];
+  doctors: IDrSpecialization[] = [];
+
+
+    //CODE FOR POPUP
+    showPopup = false;
+    data:any;
+    openPopup(data : any): void {
+      this.data = data;
+      this.showPopup = true;
+    }
+    
+    onPopupClose(result: any): void {
+  
+      this.showPopup = false;
+    }
+
 
 }

@@ -4,27 +4,27 @@
         <div class="form-group">
             <label>DoctorId</label>
             <input type="text" readonly class="form-control" name="id" id="id"
-                placeholder="{{surgery_update.doctorId}}">
+                placeholder="{{surgery_update.DoctorId}}">
         </div>
         <div class="form-group">
             <label>SurgeryId</label>
             <input type="text" readonly class="form-control" name="sid" id="sid"
-                placeholder="{{surgery_update.surgeryId}}">
+                placeholder="{{surgery_update.SurgeryId}}">
         </div>
         <div class="form-group">
             <label>Surgery Date</label>
             <input type="text" readonly class="form-control" name="sdate" id="sdate"
-                placeholder="{{surgery_update.surgeryDate.getDate()}}">
+                placeholder="{{surgery_update.SurgeryDate}}">
         </div>
         <div class="form-group">
             <label>Start Time</label>
-            <input type="text"  class="form-control" [(ngModel)]="new_startTime" name="stime" id="stime"
-                placeholder="{{surgery_update.startTime}}">
+            <input type="time"  class="form-control" [(ngModel)]="new_startTime" name="stime" id="stime"
+                placeholder="{{surgery_update.StartTime}}">
         </div>
         <div class="form-group">
             <label>End Time</label>
-            <input type="text" class="form-control" name="etime" id="etime"
-                placeholder="{{surgery_update.endTime}}">
+            <input type="time" class="form-control" name="etime" id="etime"
+                placeholder="{{surgery_update.EndTime}}">
         </div>
         <input type="button" class="btn btn-danger" (click)="OnSubmit()" value="Submit">
         <input type="button" (click)="closePopup()" class="btn btn-danger" value="Close">

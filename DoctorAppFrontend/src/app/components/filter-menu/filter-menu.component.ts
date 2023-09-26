@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-filter-menu',
   templateUrl: './filter-menu.component.html',
@@ -26,5 +27,17 @@ export class FilterMenuComponent {
     this.DoctorCategory = category
     //to send the category to doctor card component to filter out the data
     this.router.navigate(['/viewDoctors', category]);
+
+    
   }
+  //CODE FOR POPUP
+  showPopup = false;
+  openPopup(): void {
+    this.showPopup = true;
+  }
+  
+  onPopupClose(result: any): void {
+
+    this.showPopup = false;
+}
 }

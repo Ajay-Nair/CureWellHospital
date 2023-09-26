@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ISurgery } from '../../models/surgery.model';
 import { DataService } from 'src/app/services/data.service';
 
-
 @Component({
   selector: 'app-surgery-list',
   templateUrl: './surgery-list.component.html',
@@ -27,19 +26,7 @@ export class SurgeryListComponent {
 
     this.showPopup = false;
   }
-  surgeries: ISurgery[] = [{ surgeryId: 5001,
-                             doctorId: 1001, 
-                             surgeryDate: new Date(), 
-                             startTime: 12.00,
-                              endTime: 1.00, 
-                              surgeryCategory: 'ANE' },
-                              {
-                                surgeryId: 5002,
-                                doctorId: 1002, 
-                                surgeryDate: new Date(), 
-                                startTime: 12.00,
-                                 endTime: 1.00, 
-                                 surgeryCategory: 'ANE'
-                              }];
+  surgeries: ISurgery[] = [];
+
 
 }

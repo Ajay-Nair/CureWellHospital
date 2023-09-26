@@ -20,6 +20,7 @@ import { MenuButtonComponent } from './components/menu-button/menu-button.compon
 import {HttpClientModule} from '@angular/common/http';
 import { UpdateSurgeryComponent } from './components/update-surgery/update-surgery.component';
 import { AddDoctorComponent } from './components/add-doctor/add-doctor.component';
+import { EditDoctorComponent } from './components/edit-doctor/edit-doctor.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AddDoctorComponent } from './components/add-doctor/add-doctor.component
     MenuButtonComponent,
     UpdateSurgeryComponent,
     AddDoctorComponent,
+    EditDoctorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule],
   providers: [],

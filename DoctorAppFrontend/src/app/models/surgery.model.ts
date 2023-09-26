@@ -1,10 +1,10 @@
 export interface ISurgery{
 
-    surgeryId : number,
-    doctorId  : number,
-    surgeryDate : Date,
-    startTime : number,
-    endTime : number,
-    surgeryCategory:string
+    SurgeryId : number,
+    DoctorId  : number,
+    SurgeryDate : Date,
+    StartTime : number,
+    EndTime : number,
+    SurgeryCategory:string
      
 }

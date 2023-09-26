@@ -1,0 +1,21 @@
+<div class=" card popup">
+
+    <form>
+        <div class="form-group">
+            <label>Doctor Id</label>
+            <input type="text" readonly  class="form-control" name="dname" id="dname" placeholder="{{data.DoctorId}}"
+                >
+        </div>
+        <div class="form-group">
+            <label>Doctor Name</label>
+            <input type="text"  class="form-control" name="dname" id="dname" [(ngModel)]="DoctorName"
+                placeholder="Enter Doctor Name">
+        </div>
+
+      
+        <input type="button" class="btn btn-danger" (click)="OnSubmit()" value="Submit">
+        <input type="button" (click)="closePopup()" class="btn btn-danger" value="Close">
+    </form>
+
+
+</div>

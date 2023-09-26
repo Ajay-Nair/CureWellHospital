@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UpdateSurgeryService {
 
-  private url = '/assets/test_data.json';
+  private url = '';
   constructor(private client:HttpClient) { 
   }
 
