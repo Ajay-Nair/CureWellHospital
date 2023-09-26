@@ -59,7 +59,7 @@ export class AddDoctorComponent {
 
   OnSubmit() {
     console.log(this.DoctorName, this.Specialization, this.date);
-    this.DoctorData.putDoctorData(
+    this.DoctorData.postDoctorData(
       this.DoctorName,
       this.Specialization,
       this.date
