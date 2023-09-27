@@ -29,3 +29,9 @@
     (close)="onPopupClose($event)"
   ></app-edit-doctor>
 </ng-container>
+
+<ng-container *ngIf="showDeletePopup" style="background-color: #3C414D;">
+  <app-delete-popup
+    (close)="onPopupClose($event)"
+  ></app-delete-popup>
+</ng-container>

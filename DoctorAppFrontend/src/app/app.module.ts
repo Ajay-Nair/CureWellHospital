@@ -23,6 +23,7 @@ import { AddDoctorComponent } from './components/add-doctor/add-doctor.component
 import { EditDoctorComponent } from './components/edit-doctor/edit-doctor.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { ValidateTimeDirective } from './directives/custom-validators/validate-time.directive';
+import { DeletePopupComponent } from './components/delete-popup/delete-popup.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ValidateTimeDirective } from './directives/custom-validators/validate-t
     EditDoctorComponent,
     ErrorPageComponent,
     ValidateTimeDirective,
+    DeletePopupComponent,
   ],
   imports: [
     BrowserModule,
