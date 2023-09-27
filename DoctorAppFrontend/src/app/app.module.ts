@@ -18,7 +18,6 @@ import { UpdateSurgeryComponent } from './components/update-surgery/update-surge
 import { AddDoctorComponent } from './components/add-doctor/add-doctor.component';
 import { EditDoctorComponent } from './components/edit-doctor/edit-doctor.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
-import { ValidateTimeDirective } from './directives/custom-validators/validate-time.directive';
 import { AppComponent } from './app.component';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
@@ -45,7 +44,7 @@ import { SpecializationListComponent } from './components/specialization-list/sp
     AddDoctorComponent,
     EditDoctorComponent,
     ErrorPageComponent,
-    ValidateTimeDirective,
+
   ],
   imports: [
     BrowserModule,
