@@ -1,43 +1,53 @@
 <div class="popup-overlay"></div>
+
 <div class="update_surgery card popup">
 
-    <form [formGroup]="updateSurgeryForm" #surgeryForm="ngForm" validateTime>
+    <form [formGroup]="updateSurgeryForm">
+
         <div class="form-group">
+
             <label>DoctorId</label>
+
             <input type="text" readonly class="form-control" name="id" id="id"
-                placeholder="{{surgery_update.DoctorId}}">
+                placeholder="{{ surgery_update.DoctorId }}" />
         </div>
         <div class="form-group">
             <label>SurgeryId</label>
             <input type="text" readonly class="form-control" name="sid" id="sid"
-                placeholder="{{surgery_update.SurgeryId}}">
+                placeholder="{{ surgery_update.SurgeryId }}" />
         </div>
+
         <div class="form-group">
             <label>Surgery Date</label>
             <input type="text" readonly class="form-control" name="sdate" id="sdate"
-                placeholder="{{surgery_update.SurgeryDate}}">
+                placeholder="{{ surgery_update.SurgeryDate }}" />
         </div>
         <div class="form-group">
             <label>Start Time</label>
-            <input type="time" class="form-control" [(ngModel)]="new_startTime" name="stime" id="stime"  formControlName="stime" [class.is-invalid]="stime?.invalid && stime?.touched">
+            <input type="time" class="form-control" [(ngModel)]="new_startTime" name="stime" id="stime"
+                formControlName="stime" [class.is-invalid]="stime?.invalid && stime?.touched" />
             <div *ngIf="stime?.errors && stime?.touched">
                 <small class="text-danger" *ngIf="stime?.errors?.['required']">Start time is required.</small>
             </div>
         </div>
         <div class="form-group">
             <label>End Time</label>
-            <input type="time" class="form-control" name="etime" id="etime" [(ngModel)]="new_endTime"  formControlName="etime" 
-                   [class.is-invalid]="(etime?.invalid || surgeryForm.errors?.['invalidTime']) && etime?.touched">
-            <div *ngIf="etime?.errors?.['required'] && etime?.touched">
-                <small class="text-danger" >End time is required.</small>
+            <input type="time" class="form-control" name="etime" id="etime" [(ngModel)]="new_endTime"
+                formControlName="etime" [class.is-invalid]="
+          (etime?.invalid || updateSurgeryForm.hasError('invalidTime')) &&
+          etime?.touched " />
+
+         <div *ngIf="etime?.errors?.['required'] && etime?.touched">
+            <small class="text-danger">End time is required.</small>
             </div>
-            <div *ngIf="surgeryForm?.errors && surgeryForm?.errors?.['invalidTime']">
+            <div *ngIf="
+          updateSurgeryForm?.errors && updateSurgeryForm.hasError('invalidTime')
+        ">
                 <small class="text-danger">End time must be greater than start time.</small>
             </div>
         </div>
-        <input type="button" class="btn btn-success" (click)="OnSubmit()" style="margin-right: 10px;" value="Submit" [disabled]="updateSurgeryForm.invalid">
-        <input type="button" (click)="closePopup()" class="btn btn-danger" value="Close">
+        <input type="button" class="btn btn-success" (click)="OnSubmit()" style="margin-right: 10px" value="Submit"
+            [disabled]="updateSurgeryForm.invalid" />
+        <input type="button" (click)="closePopup()" class="btn btn-danger" value="Close" />
     </form>
-
-
 </div>
