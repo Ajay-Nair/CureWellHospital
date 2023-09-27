@@ -10,6 +10,13 @@ export class MenuButtonComponent {
     let sideBar = document.getElementById('side-menu')
     sideBar?.classList.toggle('hide-element')
 
+      let main = document.getElementById('main')
+      main?.classList.toggle('col-lg-9')
+  
+      main?.classList.toggle('col-md-12')
+  
+      main?.classList.toggle('container-fluid')
+
 
 
     let menuIcon = document.getElementById('menuIcon')
