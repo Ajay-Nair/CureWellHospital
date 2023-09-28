@@ -32,7 +32,7 @@ Welcome to the CureWell Hospital Doctor App Frontend repository. This web applic
     ```bash
    git clone https://github.com/hamda-fizal/CureWell.API
    ```
-   - open CureWell.API.sln in [Visual_Studio](https://visualstudio.microsoft.com/downloads/) 
+   - open CureWell.API.sln using [Visual_Studio](https://visualstudio.microsoft.com/downloads/) 
    - change server name to sql server name
    - ensure that sql server is running
    - Click on Start button to run the backend
