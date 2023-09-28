@@ -12,9 +12,8 @@ Welcome to the CureWell Hospital Doctor App Frontend repository. This web applic
 
 ## Technologies Used
 
-- Frontend Framework: [React](https://reactjs.org/)
-- Styling: [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) with [SASS](https://sass-lang.com/)
-- Routing: [React Router](https://reactrouter.com/)
+- Frontend Framework: [ANGULAR](https://angular.io/docs)
+- Styling: [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) 
 - Backend Framework : [ASP.NET](https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0)
 ## Getting Started
 
@@ -32,7 +31,8 @@ Welcome to the CureWell Hospital Doctor App Frontend repository. This web applic
 3. To run backend:
     ```bash
    git clone https://github.com/hamda-fizal/CureWell.API
-   - open CureWell.API.sln in [Visual Studio](https://visualstudio.microsoft.com/downloads/) 
+   ```
+   - open CureWell.API.sln in [Visual_Studio](https://visualstudio.microsoft.com/downloads/) 
    - change server name to sql server name
    - ensure that sql server is running
-   - Click on Start button to run the backend 
+   - Click on Start button to run the backend
