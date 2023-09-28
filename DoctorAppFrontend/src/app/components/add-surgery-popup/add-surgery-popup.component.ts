@@ -14,8 +14,8 @@ export function timeValidator(
     return null;
   }
 
-  const stimeArray = stime.split(':').map(Number);
-  const etimeArray = etime.split(':').map(Number);
+  const stimeArray = stime.toString().split(':').map(Number);
+  const etimeArray = etime.toString().split(':').map(Number);
 
   if (
     stimeArray[0] > etimeArray[0] ||
@@ -51,6 +51,7 @@ addSurgeryForm = this.fb.group({
   id: [null, [Validators.required]],
   stime: [null, [Validators.required]],
   etime: [null, [Validators.required]],
+  sdate:[null, [Validators.required]],
 },
 { validators: timeValidator }
 );
@@ -66,7 +67,8 @@ get id() {
   return this.addSurgeryForm.get('id');
 }
 
-get sdate() {
+get sdate()
+{
   return this.addSurgeryForm.get('sdate');
 }
   closePopup(): void {

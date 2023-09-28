@@ -19,9 +19,11 @@
       </div>
     </div>
 
-
-    <label>Surgery Date </label>
-    <input type="date" class="form-control" name="sdate" id="sdate" [(ngModel)]="surgery.SurgeryDate" />
+<div class="form-group">
+  <label>Surgery Date </label>
+  <input type="date" class="form-control" formControlName="sdate" name="sdate" id="sdate" [(ngModel)]="surgery.SurgeryDate" />
+</div>
+    
 
 
     <div class="form-group">
