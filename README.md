@@ -28,11 +28,12 @@ Welcome to the CureWell Hospital Doctor App Frontend repository. This web applic
     npm install
     ng s -o
 
-3. To run backend:
+3. Clone the repository to your local machine:
     ```bash
    git clone https://github.com/hamda-fizal/CureWell.API
    ```
+4. Run Backend   
    - open CureWell.API.sln using [Visual Studio](https://visualstudio.microsoft.com/downloads/) 
    - change server name to sql server name
    - ensure that sql server is running
-   - Click on Start button to run the backend
+   - Click ```Start```
