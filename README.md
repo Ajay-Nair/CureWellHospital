@@ -36,4 +36,4 @@ Welcome to the CureWell Hospital Doctor App Frontend repository. This web applic
    - open CureWell.API.sln using [Visual Studio](https://visualstudio.microsoft.com/downloads/) 
    - change server name to sql server name
    - ensure that sql server is running
-   - Click ```Start```
+   - Click ```IIS Express```
