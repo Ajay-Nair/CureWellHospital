@@ -1,6 +1,6 @@
-# CureWell Hospital Doctor App Frontend
+# CureWell Hospital Doctor App
 
-Welcome to the CureWell Hospital Doctor App Frontend repository. This web application is designed for doctors to manage patient information and appointments efficiently.
+Welcome to the CureWell Hospital Doctor App repository. This web application is designed for doctors to manage patient information and appointments efficiently.
 
 ## Features
 
