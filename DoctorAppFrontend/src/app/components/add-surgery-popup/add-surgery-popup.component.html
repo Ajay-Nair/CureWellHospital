@@ -1,0 +1,59 @@
+<div class="popup-overlay"></div>
+
+<div class="update_surgery card popup">
+  <div class="{{ alertClass }}" role="alert">
+    {{ textMessage }}
+  </div>
+  <form [formGroup]="addSurgeryForm">
+
+    <div class="mb-3">
+      <div class="form-group">
+
+        <label>DoctorId</label>
+
+        <input type="text" class="form-control" formControlName="id" name="id" id="id" [(ngModel)]="surgery.DoctorId"
+          [class.is-invalid]="id?.invalid && id?.touched" />
+      </div>
+      <div *ngIf="id?.errors && id?.touched">
+        <small class="text-danger" *ngIf="id?.errors?.['required']">Doctors Name is required.</small>
+      </div>
+    </div>
+
+<div class="form-group">
+  <label>Surgery Date </label>
+  <input type="date" class="form-control" formControlName="sdate" name="sdate" id="sdate" [(ngModel)]="surgery.SurgeryDate" />
+</div>
+    
+
+
+    <div class="form-group">
+      <label>Start Time</label>
+      <input type="time" class="form-control" name="stime" id="stime" [(ngModel)]="surgery.StartTime"
+        formControlName="stime" [class.is-invalid]="stime?.invalid && stime?.touched" />
+      <div *ngIf="stime?.errors && stime?.touched">
+        <small class="text-danger" *ngIf="stime?.errors?.['required']">Start time is required.</small>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label>End Time</label>
+      <input type="time" class="form-control" name="etime" id="etime" [(ngModel)]="surgery.EndTime"
+        formControlName="etime" [class.is-invalid]="
+            (etime?.invalid || addSurgeryForm.hasError('invalidTime')) &&
+            etime?.touched " />
+      <div *ngIf="etime?.errors?.['required'] && etime?.touched">
+        <small class="text-danger">End time is required.</small>
+      </div>
+      <div *ngIf="
+            addSurgeryForm?.errors && addSurgeryForm.hasError('invalidTime')
+          ">
+        <small class="text-danger">End time must be greater than start time.</small>
+      </div>
+    </div>
+    <input type="button" class="btn btn-success" (click)="OnSubmit()" style="margin-right: 10px" value="Submit"
+      [disabled]="addSurgeryForm.invalid" />
+    <input type="button" (click)="closePopup()" class="btn btn-danger" value="Close" />
+  </form>
+</div>

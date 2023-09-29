@@ -13,64 +13,43 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditDoctorComponent {
   @Output() close = new EventEmitter<any>();
-
   @Input() data: any;
 
- 
+ alertClass = ''
+ textMessage = ''
 
   doctorForm: FormGroup;
-
- 
-
   DoctorName: string = '';
 
  
 
-  constructor(private dataservice: DataService, private fb: FormBuilder) {
-
-this.doctorForm = this.fb.group({
-
-      dname: [null, Validators.required], // Add validation for Doctor Name
-
-    });
-
+  constructor(private dataservice: DataService, private fb: FormBuilder) 
+  {
+    this.doctorForm = this.fb.group({dname: [null, Validators.required],}); // Add validation for Doctor Name
   }
 
  
 
   OnSubmit(): void {
 
-    this.dataservice
-
-      .putDoctorData(this.DoctorName, this.data.DoctorId)
-
-      .subscribe(
-
-        (response: IDoctor) => {
-
-          this.data = response;
-
-          window.location.reload();
-
+    this.dataservice.putDoctorData(this.DoctorName, this.data.DoctorId).subscribe((response: IDoctor) => {
+        this.data = response;
+        this.textMessage = 'Edited record successfully';
+        this.alertClass = 'alert alert-success';  
         },
-
         (error: any) => {
-
-          console.log('Update failed : ' + error);
-
+        this.textMessage = error.message;
+        this.alertClass = 'alert alert-danger';
         }
-
       );
-
- 
-
-    this.close.emit();
-
+    
   }
 
   closePopup(): void {
 
+    window.location.reload();
     this.close.emit();
+    
 
   }
  

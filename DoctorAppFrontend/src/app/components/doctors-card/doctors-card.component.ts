@@ -66,6 +66,7 @@ export class DoctorsCardComponent {
 
     //CODE FOR POPUP
     showPopup = false;
+    showDeletePopup = false;
     data:any;
     openPopup(data : any): void {
       this.data = data;
@@ -75,14 +76,15 @@ export class DoctorsCardComponent {
     onPopupClose(result: any): void {
   
       this.showPopup = false;
+      this.showDeletePopup = false;
     }
 
     deleteDoctor(doctorId : any){
       this.DoctorData.deleteDoctor(doctorId).subscribe((response: any) => {
         console.log("Doctor deleted"+response);
-        window.location.reload();
+     
       })
-      
+      this.showDeletePopup = true;
     }
 
 }

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {IDoctor} from '../models/doctor.model'
+import { IDoctor } from 'src/app/models/doctor.model';
 import { ISurgery } from '../models/surgery.model';
 import { IDrSpecialization } from '../models/drSpecialization.model';
+import { SpecializationListComponent } from '../components/specialization-list/specialization-list.component';
+
 
 
 @Injectable({
@@ -48,6 +50,21 @@ export class DataService {
 
   deleteDoctor(data: number):Observable<any>{
     return this.client.delete<any>(this.url+"doctors"+"/"+data);
-    
+
   }
+  postSurgeryData(surgery:ISurgery):Observable<ISurgery>{
+
+
+      const st = surgery.StartTime.toString().split(':')
+      const et = surgery.EndTime.toString().split(':')
+      // const surgery:ISurgery = {
+      //   DoctorId:id,
+        surgery.StartTime=parseFloat(st[0]+"."+st[1]);
+        surgery.EndTime = parseFloat(et[0]+"."+et[1]);
+      //   SurgeryCategory:code,
+      //   SurgeryDate:sdate
+      // }
+      return this.client.post<ISurgery>(this.url+'surgeries',surgery)
+    }
+    
 }

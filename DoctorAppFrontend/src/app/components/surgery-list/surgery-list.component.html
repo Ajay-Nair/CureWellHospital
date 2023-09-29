@@ -30,3 +30,11 @@
       (close)="onPopupClose($event)"
     ></app-update-surgery>
   </ng-container>
+  <ng-container *ngIf="showAddSurgeryPopup" style="background-color: #3C414D;">
+    <app-add-surgery-popup
+      (close)="onPopupClose($event)"
+    ></app-add-surgery-popup>
+  </ng-container>
+  <div class="add-doctor">
+    <img src="/assets/images/plus.png" (click)="openAddSurgeryPopup()" alt="Add Doctor">
+</div>

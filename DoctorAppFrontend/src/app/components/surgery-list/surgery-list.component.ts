@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ISurgery } from '../../models/surgery.model';
-import { DataService } from '../../services/data.service';
+import { DataService } from 'src/app/services/data.service';
+
 @Component({
   selector: 'app-surgery-list',
   templateUrl: './surgery-list.component.html',
@@ -10,6 +11,7 @@ export class SurgeryListComponent {
 
   surgeries: ISurgery[] = [];
   showPopup = false;
+  showAddSurgeryPopup = false;
   surgery:any;
 
   constructor(private dataService : DataService) {
@@ -27,6 +29,9 @@ export class SurgeryListComponent {
   onPopupClose(result: any): void {
 
     this.showPopup = false;
+    this.showAddSurgeryPopup = false;
+    window.location.reload();
+
   }
   
   appendToTime(surgeryTime : number):string{
@@ -38,4 +43,11 @@ export class SurgeryListComponent {
       var sDate = surgeryDate?.toString().split('T')[0]
       return sDate?sDate:""
   }
+
+  openAddSurgeryPopup(): void {
+ 
+    this.showAddSurgeryPopup = true;
+  }
+    
+ 
 }
